@@ -33,7 +33,7 @@ section.ball{
 	background:purple;
 	height:20px;
 	width:20px;
-	position:relative;
+	bottom:0px;
 }
 
 section.sec{
