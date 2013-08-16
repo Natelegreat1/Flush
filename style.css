@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* CSS Document */
+	
+html{
+	height:100%;
+}
+
+body{
+	height:80%;
+	width:100%;
+}
+
+div.tubes{
+	border:thin;
+	height:80%;
+	width:100%;
+}
+
+div.timer{
+	width:100%;
+}
+
+section[name^="tube"]{ 
+	border:thick;
+	width:15%;
+	height:50%;
+	background:black;
+	float: left;
+	margin:15px;
+	bottom:0;
+}
+section.ball{
+	background:purple;
+	height:20px;
+	width:20px;
+	position:relative;
+}
+
+section.sec{
+	background:grey;
+	height:100%;
+	width:20px;
+	float:left;
+}
+
+.selected{
+	background:blue !important;
+}
+
+.unselected{
+	background:red !important;
+}
+
+footer,header{
+	height:10%;
+	position:static;
+}
+
+
+h1{
+	text-align:center;
+	font-size:4em;
+}
+
+h6{
+	text-align:center;
+	font-size:2em;
+}
+
+progress{
+	width:100%;
+}

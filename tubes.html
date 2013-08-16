@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ball compare</title>
+    <link href='style.css' rel='stylesheet' />
+    <script src="angular.js"> </script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+	 window.onload=function(){
+	
+			var bar=document.getElementById('bar');
+
+			var interval = setInterval(
+				function(){
+					var prog = bar.getAttribute('value');
+					prog++;
+					bar.setAttribute('value', prog);
+				}, 
+				1000);
+		};
+			
+	
+	function clicked(int){
+		var tubeNum = "t"+int;
+		var curTube=document.getElementById(tubeNum);
+		var tubes = document.getElementsByName('tube');
+	
+		
+		for(var i=0; i<tubes.length; i++){
+			if (i != int){
+				var current = tubes.item(i);
+				current.setAttribute('class','unselected');
+			}
+		}
+		
+		var ball = document.createElement("section");
+		ball.setAttribute('class','ball');
+		curTube.appendChild(ball);
+		
+		curTube.setAttribute('class', 'selected');
+		//pageLoaded();
+	}
+</script>	
+
+<header>
+<h1> BALL DROP </h1>
+</header>
+<hr/>
+
+
+    <div class='tubes'>
+        <section id='t1' name='tube' onClick="clicked(1)">
+            
+        </section>
+        <section id='t2' name='tube' onClick="clicked(2)">
+            
+        </section>
+         <section id='t3' name='tube' onClick="clicked(3)">
+            
+        </section>
+         <section id='t4' name='tube' onClick="clicked(4)">
+            
+        </section>
+        <section id='t5' name='tube' onClick="clicked(5)">
+            
+        </section>   
+    </div>
+    <div id='timer' class='timer'>
+       <progress id='bar' value="0" max="100"> </progress>
+    </div>
+
+<footer>
+	<h6>Made by Nathaniel</h6>
+</footer>
+
+</body>
+</html>
