@@ -4,88 +4,84 @@
     <meta charset="UTF-8">
     <title>Ball compare</title>
     <link href='style.css' rel='stylesheet' />
-    <script src="angular.js"> </script>
+    <script type="text/javascript" src="gamePlay.js"> </script>    
+	<script src="angular.js"> </script>
+
+
 </head>
 
 <body>
+<script>
+ window.onload=function(){
 
-<script type="text/javascript">
-	 window.onload=function(){
-	
-			var bar=document.getElementById('bar');
+	var bar = document.getElementById('bar');
+	var timeDelayMS = 1000;
+	var interval = setInterval( 
+	function(){
+			var prog = bar.getAttribute('value');
+			prog++;
+			if (prog >= 100){
+				prog = 0;
+				addNewRow();
+			}
+			bar.setAttribute('value', prog);
 
-			var interval = setInterval(
-				function(){
-					var prog = bar.getAttribute('value');
-					prog++;
-					bar.setAttribute('value', prog);
-				}, 1000);
-		};
-			
-	
-	function clicked(int){
-		var tubeNum = "t"+int;
-		var curTube=document.getElementById(tubeNum);	
-	}
-	
-	function ballClicked(int){
-		var ball = "b"+int;
-		var curBall = document.getElementById(ball);
-		var destTube = document.getElementById('selectedTube');
-		destTube.appendChild(curBall);
-	}
-	
-	function fillEmUp(){
-		var maxBalls = 4;
-		var tubes = document.getElementsByName('tube');
-		for(var i=0; i<tubes.length-1; i++){
-			var curTube = tubes.item(i).getElementsByName('ball');
-			for (var t=0; t < maxBalls; t++){
-				var ball = curTube.item(t);
-				ball.setAttribute('background','yellow');
-				//curTube.appendChild(ball);
-			}	
-		}
-	}
-	
-</script>	
+	}, timeDelayMS);
+};
+</script>
 
 <header>
 	<h1> BALL DROP </h1>
 </header>
+
 <hr/>
-	<button onClick="fillEmUp();"> START</button>
-    <div class='tubes'>
-        <section id='t1' name='tube'>
-            <section id='b1' name='ball' class='ball yellow' onClick="ballClicked(1)">
+<div class='tubes'>
+
+        <section id='t1' name='tube' class='tube'>
+            <article id='t1b1' name='ball' class='ball yellow' onClick="ballClicked(1,1)">
             
-       		</section>
-            <section id='b2' name='ball' class='ball green' onClick="ballClicked(2)">
+       		</article>
+            <article id='t1b2' name='ball' class='ball green' onClick="ballClicked(1,2)">
             
-       		</section> 
-            <section id='b3' name='ball' class='ball red' onClick="ballClicked(3)">
+       		</article> 
+            <article id='t1b3' name='ball' class='ball red' onClick="ballClicked(1,3)">
             
-       		</section> 
-            <section id='b4' name='ball' class='ball purple' onClick="ballClicked(4)">
+       		</article> 
+            <article id='t1b4' name='ball' class='ball purple' onClick="ballClicked(1,4)">
             
-       		</section>  
+       		</article>  
         </section>
-        <section id='t2' name='tube'>
+        
+        <section id='t2' name='tube' class='tube'>
+            <article id='t2b1' name='ball' class='ball yellow' onClick="ballClicked(2,1)">
+            
+       		</article>
+            <article id='t2b2' name='ball' class='ball green' onClick="ballClicked(2,2)">
+            
+       		</article> 
+            <article id='t2b3' name='ball' class='ball red' onClick="ballClicked(2,3)">
+            
+       		</article> 
+            <article id='t2b4' name='ball' class='ball purple' onClick="ballClicked(2,4)">
+            
+       		</article>
+        </section>
+        
+        <section id='t3' name='tube' class='tube'>
             
         </section>
-         <section id='t3' name='tube'>
+        
+         <section id='t4' name='tube' class='tube'>
             
         </section>
-         <section id='t4' name='tube'>
-            
-        </section>
-        <section id='selectedTube' name='tube' onClick="returnBall()">
+        
+        <section id='selectedTube' name='tube'  class='tube' onClick="returnBall()">
             
         </section>   
-    </div>
-    <div id='timer' class='timer'>
-       <progress id='bar' value="0" max="100"> </progress>
-    </div>
+</div>
+<div id='timer' class='timer'>
+   <progress id='bar' value="0" max="100"> </progress>
+</div>
 
 <footer>
 	<h6>Made by Nathaniel</h6>

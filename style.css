@@ -1,32 +1,35 @@
 @charset "UTF-8";
 /* CSS Document */
 	
-html{
+html,body{
 	height:100%;
-}
-
-body{
-	height:90%;
 	width:100%;
 }
 
 div.tubes{
-	border:thin;
-	height:100%;
+	border:groove;
+	height:70%;
 	width:100%;
+	bottom:0;
 }
 
 div.timer{
+	height:10%;
 	width:100%;
 }
 
-section[name^="tube"]{ 
+progress{
+	width:100%;
+	margin:15px;
+}
+
+section.tube{ 
 	width:15%;
 	height:50%;
 	border:inset;
 	float:left;
 	margin:15px;
-	bottom:0;
+	position:relative;
 }
 
 #selectedTube{
@@ -38,6 +41,8 @@ section[name^="tube"]{
 	width:70%;
 	bottom:0px;
 	margin:25px;
+	/position:absolute; 
+	/bottom:0;
 }
 
 .purple{
@@ -57,17 +62,13 @@ section[name^="tube"]{
 	border:outset;
 }
 
-
-
-footer,header{
+header{
 	height:10%;
 	position:static;
 }
 
-
-h1{
-	text-align:center;
-	font-size:4em;
+footer{
+	height:10%;
 }
 
 h6{
@@ -75,6 +76,7 @@ h6{
 	font-size:2em;
 }
 
-progress{
-	width:100%;
+h1{
+	text-align:center;
+	font-size:4em;
 }
