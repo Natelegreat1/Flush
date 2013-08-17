@@ -19,52 +19,67 @@
 					var prog = bar.getAttribute('value');
 					prog++;
 					bar.setAttribute('value', prog);
-				}, 
-				1000);
+				}, 1000);
 		};
 			
 	
 	function clicked(int){
 		var tubeNum = "t"+int;
-		var curTube=document.getElementById(tubeNum);
-		var tubes = document.getElementsByName('tube');
-	
-		
-		for(var i=0; i<tubes.length; i++){
-			var current = tubes.item(i);
-			current.setAttribute('class','unselected');
-			
-		}
-		
-		var ball = document.createElement("section");
-		ball.setAttribute('class','ball');
-		curTube.appendChild(ball);
-		
-		curTube.setAttribute('class', 'selected');
-		//pageLoaded();
+		var curTube=document.getElementById(tubeNum);	
 	}
+	
+	function ballClicked(int){
+		var ball = "b"+int;
+		var curBall = document.getElementById(ball);
+		var destTube = document.getElementById('selectedTube');
+		destTube.appendChild(curBall);
+	}
+	
+	function fillEmUp(){
+		var maxBalls = 4;
+		var tubes = document.getElementsByName('tube');
+		for(var i=0; i<tubes.length-1; i++){
+			var curTube = tubes.item(i).getElementsByName('ball');
+			for (var t=0; t < maxBalls; t++){
+				var ball = curTube.item(t);
+				ball.setAttribute('background','yellow');
+				//curTube.appendChild(ball);
+			}	
+		}
+	}
+	
 </script>	
 
 <header>
-<h1> BALL DROP </h1>
+	<h1> BALL DROP </h1>
 </header>
 <hr/>
-
-
+	<button onClick="fillEmUp();"> START</button>
     <div class='tubes'>
-        <section id='t1' name='tube' onClick="clicked(1)">
+        <section id='t1' name='tube'>
+            <section id='b1' name='ball' class='ball yellow' onClick="ballClicked(1)">
+            
+       		</section>
+            <section id='b2' name='ball' class='ball green' onClick="ballClicked(2)">
+            
+       		</section> 
+            <section id='b3' name='ball' class='ball red' onClick="ballClicked(3)">
+            
+       		</section> 
+            <section id='b4' name='ball' class='ball purple' onClick="ballClicked(4)">
+            
+       		</section>  
+        </section>
+        <section id='t2' name='tube'>
             
         </section>
-        <section id='t2' name='tube' onClick="clicked(2)">
+         <section id='t3' name='tube'>
             
         </section>
-         <section id='t3' name='tube' onClick="clicked(3)">
+         <section id='t4' name='tube'>
             
         </section>
-         <section id='t4' name='tube' onClick="clicked(4)">
-            
-        </section>
-        <section id='t5' name='tube' onClick="clicked(5)">
+        <section id='selectedTube' name='tube' onClick="returnBall()">
             
         </section>   
     </div>
