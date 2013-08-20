@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ball compare</title>
-    <link href='style.css' rel='stylesheet' />
+    <link href='style_game.css' rel='stylesheet' />
     <script type="text/javascript" src="gamePlay.js"> </script>    
 	<script src="angular.js"> </script>
 
@@ -31,7 +31,7 @@
 </script>
 
 <header>
-	<h1> BALL DROP </h1>
+  <h1>COLOUR FLUSH</h1>
 </header>
 
 <hr/>
@@ -56,16 +56,16 @@
             <article id='t2b1' name='ball' class='ball yellow' onClick="ballClicked(2,1)">
             
        		</article>
-            <article id='t2b2' name='ball' class='ball green' onClick="ballClicked(2,2)">
+          <article id='t2b2' name='ball' class='ball green' onClick="ballClicked(2,2)">
             
        		</article> 
-            <article id='t2b3' name='ball' class='ball red' onClick="ballClicked(2,3)">
+          <article id='t2b3' name='ball' class='ball red' onClick="ballClicked(2,3)">
             
        		</article> 
-            <article id='t2b4' name='ball' class='ball purple' onClick="ballClicked(2,4)">
+          <article id='t2b4' name='ball' class='ball purple' onClick="ballClicked(2,4)">
             
        		</article>
-        </section>
+  </section>
         
         <section id='t3' name='tube' class='tube'>
             
@@ -80,10 +80,11 @@
         </section>   
 </div>
 <div id='timer' class='timer'>
-   <progress id='bar' value="0" max="100"> </progress>
+  <progress id='bar' value="0" max="100"> </progress>
 </div>
 
 <footer>
+    <a id='logout' href="login.php?ch=logout">Logout</a> <!--Acceses the login.php php with a value of 'logout' which will trigger the logout() function -->
 	<h6>Made by Nathaniel</h6>
 </footer>
 
